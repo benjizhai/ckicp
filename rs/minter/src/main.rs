@@ -91,7 +91,12 @@ pub fn post_upgrade() {
 }
 
 #[query]
-pub fn get_ckicp_config() -> CkicpConfig {
+#[modifiers("only_owner")]
+pub fn get_config() -> CkicpConfig {
+    get_ckicp_config()
+}
+
+fn get_ckicp_config() -> CkicpConfig {
     CKICP_CONFIG.with(|ckicp_config| {
         let ckicp_config = ckicp_config.borrow();
         ckicp_config.get().0.clone().unwrap()

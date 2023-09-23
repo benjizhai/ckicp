@@ -83,7 +83,7 @@ service : () -> {
   revoke_admin : (principal) -> ();
   transfer_ownership : (opt principal) -> ();
   transfer_ownership_immediate : (opt principal) -> ();
-  get_ckicp_config : () -> (CkicpConfig) query;
+  get_config : () -> (CkicpConfig) query;
   get_ckicp_state : () -> (CkicpState) query;
   get_funding_subaccount : () -> (vec nat8) query;
   get_funding_account : () -> (text) query;
